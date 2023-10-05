@@ -1,1 +1,1 @@
-# gold-oct-2023
+Exercises for building foundational familiarity with basics of Python coding.
