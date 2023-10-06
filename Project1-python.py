@@ -1,17 +1,20 @@
-# Import the random module to generate random numbers.
+# Import the 'random' and 'string' modules to generate random numbers and strings.
 import random
+import string
 
-# Prompt the user for the number of EC2 instances needed and store it in 'n'.
+# Prompt the user to input the number of EC2 instances needed and their department.
 n = int(input('Number of EC2 instances needed: '))
-
-# Prompt the user for their department and convert it to lowercase for case insensitivity.
 department = input('Your department (Accounting, Marketing, or FinOps only): ').lower()
 
-# Check if the provided department is one of the allowed options: Marketing, Accounting, or FinOps.
+# Define a variable 'letters' containing all the uppercase and lowercase letters of the alphabet.
+letters = string.ascii_letters
+
+# Check if the department input is one of the valid options: 'marketing', 'accounting', or 'finops'.
 if (department == 'marketing') or (department == 'accounting') or (department == 'finops'):
-    # Generate 'n' unique names for EC2 instances based on the department and a random 4-digit number.
+    # Loop 'n' times to generate and print instance names.
     for suffix in range(0, n):
-        print(department, random.randrange(1000, 9999, 1), sep='')
+        # Concatenate department name, a random 4-digit number, and a 3-character random string.
+        print(department, random.randrange(1000, 9999, 1), (''.join(random.choice(letters) for i in range(3))), sep='')
 else:
-    # Display a message if the department is not one of the allowed options.
+    # If the department input is not valid, print an error message.
     print('This name generator is restricted to Marketing, Accounting, or FinOps personnel.')
