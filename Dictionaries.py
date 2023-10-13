@@ -25,7 +25,7 @@ print(list(var2.keys()))  # Converts the keys of the 'var2' dictionary into a li
 
 # Iterates through the keys and values in the 'var2' dictionary and prints them.
 for k, v in var2.items():
-    print(k, v)
+    print(k,v)
 
 # Creates a dictionary named 'dict_of_lists' with keys '000', '001', and '002', where the values are lists of random integers.
 dict_of_lists = {
